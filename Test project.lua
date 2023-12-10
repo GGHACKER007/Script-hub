@@ -1,3 +1,5 @@
+-- It just a test project if you need any offsets or values you can take it!
+
 DATA = 0
 gg.sleep(100)
 gg.alert([[
