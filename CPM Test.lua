@@ -66,6 +66,19 @@ Soraia Cordeiro
 TEAM ANM
 ]], " DIGITAR ")
 
+gg.alert("Correct key!")
+gg.sleep(500)
+if gg.alert("Tired of ads thought key?. Get ads less & keyless for all other upcoming script in the premium subscription permanently for $5", "Enter", "Copy Link") ~= 1 then
+gg.copyText("www.buymeacoffee.com/gg_hacker")
+gg.alert("Copied to clipboard")
+gg.alert([[
+We haven't set-up so if you wanna buy or need details
+contact me
+Instagram : gg_hacker_cpm
+]]), " Enjoy ")
+end
+
+
 gg.sleep(8000)
 gg.setVisible(false) -- Visibility
 -- Function to display a 360° rotating loading animation with more rounds
