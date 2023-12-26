@@ -143,8 +143,7 @@ end
 -- Example usage
 showLongLoading()
 
-gg.sleep(5000)
-gg.toast("Updated [[1]] True")
+
 gg.sleep(6000)
 gg.setVisible(false)
 function mainMenu()
@@ -166,12 +165,12 @@ menu = gg.choice({
 '╚»😫«╝• 𝙱𝚛𝚞𝚗 𝚘𝚞𝚝 Off 』',
 '╚»😈«╝• Death end On 』',
 '╚»😈«╝• Death end Off 』',
-'╚»😈«╝• Autofarm levels On 』',
-'╚»😈«╝• Autofarm levels Off 』',
+'╚»😳«╝• Autofarm levels On 』',
+'╚»😳«╝• Autofarm levels Off 』',
 '╚»💸«╝• 𝚂𝙴𝙽𝙳 𝙼𝙾𝙽𝙴𝚈 V2 』',
-'╚»😈«╝• 2B coins 』',
-'╚»😈«╝• Instant 50M 』',
-'╚»😈«╝• Custom Hp editor 』',
+'╚»🛡️«╝• 2B coins 』',
+'╚»💸«╝• Instant 50M 』',
+'╚»🔰«╝• Custom Hp editor 』',
 '╚»📎«╝• 𝚄𝚙𝚍𝚊𝚝𝚎𝚜 』',
 '╚»📎«╝• 𝙰𝙱𝙾𝚄𝚃 𝚄𝚂 』',
 '╚»•ᴇxɪᴛ•«╝'},
