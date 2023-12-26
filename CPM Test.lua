@@ -6,33 +6,10 @@
 
 
 
--- Enable or disable password protection    
-local isLoginEnabled = false -- true is Enable & false is disable
-
-gg.alert([[
-Test project of TEAM ANM implementing token systems.
-We will add 24/7 random tokens for each device soon as possible]])
-if gg.alert("This script contents key thought linkvertise have you got the key? if yes then click yes, if no then click get key", "YES", "GET KEY") ~= 1 then
-gg.setVisible(false)
-gg.clearResults()
-gg.clearList()
-gg.copyText("https://direct-link.net/872138/test-key-system")
-gg.alert("Copied to clipboard now open any browser & paste the link complete the linkvertise")
-gg.setVisible(true)
-print([[
-
-Link has been copied to your clipboard open any browser & paste the link complete the verification & get the key!
-
-If you got any error or issue contact me.
-
-Instagram : gg_hacker_cpm < < active > >
-discord : gghacker < < currently inactive > >
-]])
-return os.exit()
-end
+local isLoginEnabled = true -- true is Enable & false is disable
 
 function checkLogin()
-    local password = "lIvWVuhvymUHK1GARRIzj5m15YJqbyYSf8tB0Zm3MhxjVwOFfP7nGWGHJwZwc3Uc"
+    local password = "1"
     local userInput
     while (userInput == nil) do
         userInput = gg.prompt({"Type password"}, nil, {'text'})
@@ -60,24 +37,12 @@ end
 
 
 
+
 gg.setVisible(false)
 gg.alert([[
 Soraia Cordeiro
 TEAM ANM
 ]], " DIGITAR ")
-
-gg.alert("Correct key!")
-gg.sleep(500)
-if gg.alert("Tired of ads thought key?. Get ads less & keyless for all other upcoming script in the premium subscription permanently for $5", "Enter", "Copy Link") ~= 1 then
-gg.copyText("www.buymeacoffee.com/gg_hacker")
-gg.alert("Copied to clipboard")
-gg.alert([[
-We haven't set-up so if you wanna buy or need details
-contact me
-Instagram : gg_hacker_cpm
-]]), " Enjoy ")
-end
-
 
 gg.sleep(8000)
 gg.setVisible(false) -- Visibility
