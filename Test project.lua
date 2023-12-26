@@ -2,6 +2,9 @@
 
 DATA = 0
 gg.sleep(100)
+-- Enable or disable password protection    
+local isLoginEnabled = true -- true is Enable & false is disable
+
 gg.alert([[
 Test project of TEAM ANM implementing token systems.
 We will add 24/7 random tokens for each device soon as possible]])
@@ -24,26 +27,30 @@ discord : gghacker < < currently inactive > >
 return os.exit()
 end
 
-
-function Login()
-    local password = "JpewgByjTIeH37mvi0WhHiyUE0LvgKNEIK9QKuNbKfrR2GcBrghd9qO46SovGYYQNz6qY29r8CKgGA1jkNsj0xZ8NTesHt63kvSrfrPKeMdnLjz6KLaqPFkiBJJ24f2f"
+function checkLogin()
+    local password = "lIvWVuhvymUHK1GARRIzj5m15YJqbyYSf8tB0Zm3MhxjVwOFfP7nGWGHJwZwc3Uc"
     local userInput
     while (userInput == nil) do
-    userInput = gg.prompt({"Enter Key"},nil,{'text'});
+        userInput = gg.prompt({"Type password"}, nil, {'text'})
     end
     if userInput[1] ~= password then
-        local faiedLoginHandler = gg.alert("!! Wrong key!!","Try Again",nil,"Exit")
+        local failedLoginHandler = gg.alert("!! Wrong password !!", "Try Again", nil, "Exit")
         
-        if faiedLoginHandler == 1 then
-            Login()
+        if failedLoginHandler == 1 then
+            checkLogin()
         else
-           print("Try again after you get the key")
+            print("Try again after you get the password")
             os.exit()
         end
-
     end
 end
-Login()
+
+-- Main script logic
+if isLoginEnabled then
+    checkLogin()
+else
+    gg.alert("Currently Keyless Experience. Enjoy!")
+end
 
 
 
