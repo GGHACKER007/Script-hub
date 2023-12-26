@@ -3,6 +3,40 @@
 -- Version : 4.8.15.1
 -- Everyone can use these values
 -- Team ANM
+
+
+
+-- Enable or disable password protection    
+local isLoginEnabled = false -- true is Enable & false is disable
+
+function checkLogin()
+    local password = "1"
+    local userInput
+    while (userInput == nil) do
+        userInput = gg.prompt({"Type password"}, nil, {'text'})
+    end
+    if userInput[1] ~= password then
+        local failedLoginHandler = gg.alert("!! Wrong password !!", "Try Again", nil, "Exit")
+        
+        if failedLoginHandler == 1 then
+            checkLogin()
+        else
+            print("Try again after you get the password")
+            os.exit()
+        end
+    end
+end
+
+-- Main script logic
+if isLoginEnabled then
+    checkLogin()
+else
+    gg.alert("Currently Keyless Experience. Enjoy!")
+end
+
+
+
+
 gg.setVisible(false)
 gg.alert([[
 Soraia Cordeiro
