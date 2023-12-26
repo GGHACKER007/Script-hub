@@ -27,8 +27,11 @@ discord : gghacker < < currently inactive > >
 return os.exit()
 end
 
+
+local isLoginEnabled = false -- true is Enable & false is disable
+
 function checkLogin()
-    local password = "lIvWVuhvymUHK1GARRIzj5m15YJqbyYSf8tB0Zm3MhxjVwOFfP7nGWGHJwZwc3Uc"
+    local password = "test project"
     local userInput
     while (userInput == nil) do
         userInput = gg.prompt({"Type password"}, nil, {'text'})
@@ -51,8 +54,6 @@ if isLoginEnabled then
 else
     gg.alert("Currently Keyless Experience. Enjoy!")
 end
-
-
 
 
 
