@@ -6,7 +6,7 @@
 
 
 
-local isLoginEnabled = true -- true is Enable & false is disable
+local isLoginEnabled = false -- true is Enable & false is disable
 
 function checkLogin()
     local password = "1"
