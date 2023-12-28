@@ -11,7 +11,7 @@ Currently some options has been outdated due to latest update.
 We are trying our best to fix it soon as possible, until that enjoy the script with some working options!
 
 Powered by TEAM ANM
-Thnak you]], "TEAM ANM")
+Thank you]], "TEAM ANM")
 
 -- Function to encrypt a string using XOR
 function xorEncryptDecrypt(str, key)
