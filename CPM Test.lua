@@ -104,6 +104,17 @@ TEAM ANM
 ]], " DIGITAR ")
 
 
+gg.sleep(500)
+gg.alert([[
+Contact details!
+Instagram : gg_hacker_cpm << Active >>
+Discord : gghacker << Currently inactive >>
+TikTok : gg_hacker007 << Active >>
+
+Here you can send bug report or need any help always here to respond!
+]], "TEAM ANN")
+
+
 gg.sleep(8000)
 gg.setVisible(false) -- Visibility
 -- Function to display a 360° rotating loading animation with more rounds
@@ -749,6 +760,14 @@ end
 
 
 function VVIP15()
+if isPatched then
+gg.alert([[
+Send Money V2 has been patched, stay tuned soon we try to find new one!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+return
+end
+
 if gg.alert("USE THIS HACK IN ROOM NOT LOBBY ONCE THE HACK WAS ACTIVATED SEND $800 CASH TO PLAYES", "🅶🅾", "🆁🅴🆃🆄🆁🅽") ~= 1 then
 gg.setVisible(false)
 gg.clearResults()
@@ -795,6 +814,14 @@ end
 
 
 function VVIP16()
+if isPatched then
+gg.alert([[
+2B Coin has been patched, stay tuned soon we try to find new one!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+return
+end
+
 if gg.alert("IT JUST A VISUAL ARE YOU SURE YOU WANNA TRY IT?!", "🅶🅾", "🆁🅴🆃🆄🆁🅽") ~= 1 then
 gg.setVisible(false)
 gg.clearResults()
