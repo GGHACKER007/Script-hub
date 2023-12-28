@@ -1,60 +1,114 @@
--- It just a test project if you need any offsets or values you can take it!
+--[[
+It just a test project if you need any offsets or values you can take it!
+
+Soo as possible we gonna connect our server for the key system api, so get ready for a massive experience into a lua script
+]]--
+
 
 DATA = 0
-gg.sleep(100)
-gg.alert([[
-Test project of TEAM ANM implementing token systems.
-We will add 24/7 random tokens for each device soon as possible]])
-if gg.alert("This script contents key thought linkvertise have you got the key? if yes then click yes, if no then click get key", "YES", "GET KEY") ~= 1 then
-gg.setVisible(false)
-gg.clearResults()
-gg.clearList()
-gg.copyText("https://direct-link.net/872138/test-key-system")
-gg.alert("Copied to clipboard now open any browser & paste the link complete the linkvertise")
-gg.setVisible(true)
-print([[
+gg.sleep(1000)
 
-Link has been copied to your clipboard open any browser & paste the link complete the verification & get the key!
+-- Function to encrypt a string using XOR
+function xorEncryptDecrypt(str, key)
+    local result = ""
+    for i = 1, #str do
+        local charCode = string.byte(str, i)
+        local keyCode = string.byte(key, (i % #key) + 1)
+        result = result .. string.char(bit32.bxor(charCode, keyCode))
+    end
+    return result
+end
 
-If you got any error or issue contact me.
+-- Check if the alert has been shown and version matches
+local alertShownFile = "/sdcard/alertShown.txt"
+local versionFile = "/sdcard/version.txt"
+local currentVersion = "1.0"  -- Change this to your current version
 
-Instagram : gg_hacker_cpm < < active > >
-discord : gghacker < < currently inactive > >
-]])
-return os.exit()
+local alertFile = io.open(alertShownFile, "r")
+local versionFileContent = io.open(versionFile, "r")
+
+if alertFile == nil or versionFileContent == nil or versionFileContent:read("*a") ~= currentVersion then
+    -- Alert has not been shown or version has been updated, show the alert
+    gg.setVisible(false)
+    gg.alert("Script got updated\nVersion : "..currentVersion, "TEAM ANM")
+    
+
+    -- Encrypt and write the new file content
+    local encryptedContent = ""
+    for i = 1, 100 do
+        encryptedContent = encryptedContent .. xorEncryptDecrypt("Line " .. i .. ": Collect trash", "Porra") .. "\n"
+    end
+
+    -- Add your name for credit
+    encryptedContent = encryptedContent .. xorEncryptDecrypt("Credit: TEAM ANM", "Porra")
+
+    alertFile = io.open(alertShownFile, "w")
+    alertFile:write(encryptedContent)
+    alertFile:close()
+
+    -- Update the version file
+    local versionFile = io.open(versionFile, "w")
+    versionFile:write(currentVersion)
+    versionFile:close()
 end
 
 
-function Login()
+
+--[[
+It just a basic password/key prompt, if your near here you can learn :) & here we added a toggle function to on/off the key/password prompt
+]]--
+
+local isLoginEnabled = false -- true is Enable & false is disable
+
+function checkLogin()
     local password = "JpewgByjTIeH37mvi0WhHiyUE0LvgKNEIK9QKuNbKfrR2GcBrghd9qO46SovGYYQNz6qY29r8CKgGA1jkNsj0xZ8NTesHt63kvSrfrPKeMdnLjz6KLaqPFkiBJJ24f2f"
     local userInput
     while (userInput == nil) do
-    userInput = gg.prompt({"Enter Key"},nil,{'text'});
+        userInput = gg.prompt({"Enter Key"}, nil, {'text'})
     end
     if userInput[1] ~= password then
-        local faiedLoginHandler = gg.alert("!! Wrong key!!","Try Again",nil,"Exit")
+        local failedLoginHandler = gg.alert("!! Wrong key !!", "Try Again", nil, "Exit")
         
-        if faiedLoginHandler == 1 then
-            Login()
+        if failedLoginHandler == 1 then
+            checkLogin()
         else
-           print("Try again after you get the key")
+            print("Try again after you get the key")
             os.exit()
         end
-
     end
 end
-Login()
 
-
-
-
-
-gg.alert("Correct key!")
-gg.sleep(500)
-if gg.alert("Tired of ads thought key?. Get ads less & keyless for all other upcoming script in the premium subscription permanently for $5", "Enter", "Copy Link") ~= 1 then
-gg.copyText("www.buymeacoffee.com/gg_hacker")
-gg.alert("Copied to clipboard")
+-- Main script logic
+if isLoginEnabled then
+    checkLogin()
+else
+    gg.alert("Currently Keyless Experience. Enjoy!", "COMEÇAR")
 end
+
+
+
+
+
+
+
+gg.sleep(500)
+gg.alert([[
+Soraia Cordeiro : Scripter & update handler
+TEAM ANM
+]], " DIGITAR ")
+
+gg.sleep(500)
+gg.alert([[
+Contact details!
+Instagram : gg_hacker_cpm << Active >>
+Discord : gghacker << Currently inactive >>
+TikTok : gg_hacker007 << Active >>
+
+Here you can send bug report or need any help always here to respond!
+]], "TEAM ANN")
+
+
+
 
 gg.sleep(8000)
 gg.setVisible(false) -- Visibility
@@ -82,6 +136,13 @@ show360RotatingLoadingWithRounds(10)
 
 -- Patch function
 local isPatched = true
+
+
+-- Update function
+local isUpdate = true
+
+
+
 
 
 gg.sleep(6000)
@@ -214,6 +275,12 @@ menu = gg.choice({
 '╚»😫«╝• 𝙱𝚛𝚞𝚗 𝚘𝚞𝚝 Off 』',
 '╚»😈«╝• Death end On 』',
 '╚»😈«╝• Death end Off 』',
+'╚»😳«╝• Autofarm levels On 』',
+'╚»😳«╝• Autofarm levels Off 』',
+'╚»💸«╝• 𝚂𝙴𝙽𝙳 𝙼𝙾𝙽𝙴𝚈 V2 』',
+'╚»🛡️«╝• 2B coins 』',
+'╚»💸«╝• Instant 50M 』',
+'╚»🔰«╝• Custom Hp editor 』',
 '╚»📎«╝• 𝚄𝚙𝚍𝚊𝚝𝚎𝚜 』',
 '╚»📎«╝• 𝙰𝙱𝙾𝚄𝚃 𝚄𝚂 』',
 '╚»•ᴇxɪᴛ•«╝'},
@@ -235,9 +302,15 @@ if menu == 10 then VVIP9() end
 if menu == 11 then VVIP10() end
 if menu == 12 then VVIP11() end
 if menu == 13 then VVIP12() end
-if menu == 14 then updates() end
-if menu == 15 then about() end
-if menu == 16 then BYE() end
+if menu == 14 then VVIP13() end
+if menu == 15 then VVIP14() end
+if menu == 16 then VVIP15() end
+if menu == 17 then VVIP16() end
+if menu == 18 then VVIP17() end
+if menu == 19 then VVIP18() end
+if menu == 20 then updates() end
+if menu == 21 then about() end
+if menu == 22 then BYE() end
 end
 end
 
@@ -285,6 +358,15 @@ end
 
 
 function VVIP1()
+if isUpdate then
+gg.alert([[
+We haven't updated to the latest version : 4.8.15.1
+Soon we update everything!!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+return
+end
+
 gg.clearResults()
 gg.clearList()
 -- main code on
@@ -568,6 +650,192 @@ LibStart = gg.getRangesList("libil2cpp.so")[2].start
 
 
 
+
+function VVIP13()
+-- Level autofarm
+gg.setVisible(false)
+gg.setVisible(false)
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("0.1", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+revert = gg.getResults(2000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("4E-45", gg.TYPE_FLOAT)
+gg.processResume()
+gg.clearResults()
+gg.toast("🔰DONE🔰")
+end
+
+
+
+
+
+function VVIP14()
+gg.setVisible(false)
+gg.setRanges(gg.REGION_CODE_APP)
+gg.refineNumber("4E-45", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+revert = gg.getResults(2000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("0.1", gg.TYPE_FLOAT)
+gg.processResume()
+gg.clearResults()
+gg.toast("🔰DONE🔰")
+end
+
+
+
+
+
+
+function VVIP15()
+if gg.alert("USE THIS HACK IN ROOM NOT LOBBY ONCE THE HACK WAS ACTIVATED SEND $800 CASH TO PLAYES", "🅶🅾", "🆁🅴🆃🆄🆁🅽") ~= 1 then
+gg.setVisible(false)
+gg.clearResults()
+gg.clearList()
+else
+gg.clearResults()gg.clearList()
+gg.setVisible(false)
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("1,202,590,843,160", gg.TYPE_QWORD)
+gg.processResume()
+gg.getResults(1000)
+gg.getResultsCount()
+gg.getResults(0)
+gg.setValues({ -- table(18801ef)
+	[1] = { -- table(559d4fc)
+		['address'] = 0xbd102c24,
+		['flags'] = 4, -- gg.TYPE_DWORD
+		['value'] = '10,000,000',
+	},
+})
+gg.addListItems({ -- table(18801ef)
+	[1] = { -- table(559d4fc)
+		['address'] = 0xbd102c24,
+		['flags'] = 4, -- gg.TYPE_DWORD
+		['value'] = '10,000,000',
+	},
+})
+gg.getListItems({ -- table(18801ef)
+	[1] = { -- table(559d4fc)
+		['address'] = 0xbd102c24,
+		['flags'] = 4, -- gg.TYPE_DWORD
+		['value'] = '10,000,000',
+	},
+})
+gg.clearResults()
+gg.clearList()
+
+gg.toast("🔰DONE🔰")
+gg.clearResults()
+end
+end
+
+
+
+
+function VVIP16()
+if gg.alert("IT JUST A VISUAL ARE YOU SURE YOU WANNA TRY IT?!", "🅶🅾", "🆁🅴🆃🆄🆁🅽") ~= 1 then
+gg.setVisible(false)
+gg.clearResults()
+gg.clearList()
+else
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("-6,268,592,875,603,357,709;-7,998,318,181,468,767,235;-8,069,734,941,019,061,251;4,132,763,391,716,657,875:13", gg.TYPE_QWORD)
+gg.refineNumber("-6,268,592,875,603,357,709;-7,998,318,181,468,767,235:13", gg.TYPE_QWORD)
+gg.getResults(999)
+gg.editAll("-2,999,674,700,102,111,232;3,596,551,104", gg.TYPE_QWORD)
+gg.alert("OPEN LEVELS & SELECT ANY LEVEL THEN CLICK MENU")
+gg.toast("🔰DONE🔰")
+end
+end
+
+
+
+
+
+
+
+function VVIP17()
+gg.setVisible(false)
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("50000000", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+--[[ found: 1]]
+gg.getResults(300, nil, nil, nil, nil, nil, nil, nil, nil)
+--[[ count: 1]]
+gg.editAll("9999999999999", gg.TYPE_FLOAT)
+gg.clearResults()
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber("2.31009895E29", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+--[[ found: 1]]
+gg.getResults(300, nil, nil, nil, nil, nil, nil, nil, nil)
+--[[ count: 1]]
+gg.editAll("50000000", gg.TYPE_FLOAT)
+gg.clearResults()
+gg.alert("Click Daily Social Media Money Icon")
+--[[ return: 1]]
+gg.toast("🔰DONE🔰")
+end
+
+
+
+
+
+function VVIP18()
+input=gg.prompt({"ENTER HP YOU WANT","ENTER NM YOU WANT", "ENTER INNER HP YOU WANT", "ENTER INNER NM YOU WANT"},
+{[1]=" "},
+{[1]="number"},
+{[2]=" "},
+{[2]="number"},
+{[3]=" "},
+{[3]="number"},
+{[4]=" "},
+{[4]="number"})
+
+if input == nil then
+gg.toast("cancel")
+else
+  gg.setRanges(gg.REGION_CODE_APP)
+  gg.searchNumber("190" ,gg.TYPE_FLOAT)
+  gg.getResults(99999)
+  gg.editAll(input[1] ,gg.TYPE_FLOAT)
+  gg.clearResults()
+  gg.sleep(50)
+  gg.setRanges(gg.REGION_CODE_APP)
+  gg.searchNumber("300" ,gg.TYPE_FLOAT)
+  gg.getResults(99999)
+  gg.editAll(input[2] ,gg.TYPE_FLOAT)
+  gg.clearResults()
+  gg.setRanges(gg.REGION_CODE_APP)
+  gg.searchNumber("5900", gg.TYPE_FLOAT)
+  gg.getResults(999)
+  gg.editAll(input[3], gg.TYPE_FLOAT)
+  gg.clearResults()
+  gg.sleep(50)
+  gg.setRanges(gg.REGION_CODE_APP)
+  gg.setVisible(false)
+  gg.searchNumber("4100", gg.TYPE_FLOAT)
+  gg.getResults(999)
+  gg.editAll(input[4], gg.TYPE_FLOAT)
+  gg.clearResults()
+  gg.sleep(50)
+  gg.setRanges(gg.REGION_CODE_APP)
+  gg.searchNumber("0.1" ,gg.TYPE_FLOAT)
+  gg.getResults(999)
+  gg.editAll("4E-45", gg.TYPE_FLOAT)
+  gg.clearResults()
+  gg.alert("NOW BUY THE ENGINE L4 2.5 And Fast Gearbox")
+  gg.alert("If you wanna get same hp modification in another car just buy the same engine in those car's\n if you wanna use anyother hp&nm in this list make sure restart your game")
+  gg.clearResults()
+  gg.toast("🔰DONE🔰")
+  end
+  end
+
+
+
+
+
+
+
+
+
+
 function updates()
 gg.alert([[
 [+] Updated Bypass world sale
@@ -577,6 +845,11 @@ gg.alert([[
 [+] Added a test key, It doesnt has expiration/rest
 [+] Ip whitelist will be added soon
 [+] Premium membership whitelist will be added soon
+[+] Added 2B coins
+[+] Autofarm levels
+[+] Instant 50M
+[+] Custom Hp
+[~] Fixed Errors
 
 More options will be added soon!
 
