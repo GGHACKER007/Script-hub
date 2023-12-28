@@ -1,26 +1,78 @@
--- Script version Free ;)
--- Game : car parking multiplayer
--- Version : 4.8.15.1
--- Everyone can use these values
--- Team ANM
+--[[
+Script version Free ;)
+Game : car parking multiplayer
+Version : 4.8.15.1
+Everyone can use these values
+Team ANM
+--]]
+
+DATA = 0
+
+-- Function to encrypt a string using XOR
+function xorEncryptDecrypt(str, key)
+    local result = ""
+    for i = 1, #str do
+        local charCode = string.byte(str, i)
+        local keyCode = string.byte(key, (i % #key) + 1)
+        result = result .. string.char(bit32.bxor(charCode, keyCode))
+    end
+    return result
+end
+
+-- Check if the alert has been shown and version matches
+local alertShownFile = "/sdcard/alertShown.txt"
+local versionFile = "/sdcard/version.txt"
+local currentVersion = "1.0"  -- Change this to your current version
+
+local alertFile = io.open(alertShownFile, "r")
+local versionFileContent = io.open(versionFile, "r")
+
+if alertFile == nil or versionFileContent == nil or versionFileContent:read("*a") ~= currentVersion then
+    -- Alert has not been shown or version has been updated, show the alert
+    gg.setVisible(false)
+    gg.alert("Script got updated\nVersion : "..currentVersion, "TEAM ANM")
+    
+
+    -- Encrypt and write the new file content
+    local encryptedContent = ""
+    for i = 1, 100 do
+        encryptedContent = encryptedContent .. xorEncryptDecrypt("Line " .. i .. ": Collect trash", "Porra") .. "\n"
+    end
+
+    -- Add your name for credit
+    encryptedContent = encryptedContent .. xorEncryptDecrypt("Credit: TEAM ANM", "Porra")
+
+    alertFile = io.open(alertShownFile, "w")
+    alertFile:write(encryptedContent)
+    alertFile:close()
+
+    -- Update the version file
+    local versionFile = io.open(versionFile, "w")
+    versionFile:write(currentVersion)
+    versionFile:close()
+end
 
 
+
+--[[
+It just a basic password/key prompt, if your near here you can learn :) & here we added a toggle function to on/off the key/password prompt
+]]--
 
 local isLoginEnabled = false -- true is Enable & false is disable
 
 function checkLogin()
-    local password = "1"
+    local password = "JpewgByjTIeH37mvi0WhHiyUE0LvgKNEIK9QKuNbKfrR2GcBrghd9qO46SovGYYQNz6qY29r8CKgGA1jkNsj0xZ8NTesHt63kvSrfrPKeMdnLjz6KLaqPFkiBJJ24f2f"
     local userInput
     while (userInput == nil) do
-        userInput = gg.prompt({"Type password"}, nil, {'text'})
+        userInput = gg.prompt({"Enter Key"}, nil, {'text'})
     end
     if userInput[1] ~= password then
-        local failedLoginHandler = gg.alert("!! Wrong password !!", "Try Again", nil, "Exit")
+        local failedLoginHandler = gg.alert("!! Wrong key !!", "Try Again", nil, "Exit")
         
         if failedLoginHandler == 1 then
             checkLogin()
         else
-            print("Try again after you get the password")
+            print("Try again after you get the key")
             os.exit()
         end
     end
@@ -30,7 +82,7 @@ end
 if isLoginEnabled then
     checkLogin()
 else
-    gg.alert("Currently Keyless Experience. Enjoy!")
+    gg.alert("Currently Keyless Experience. Enjoy!", "COMEÇAR")
 end
 
 
@@ -38,11 +90,13 @@ end
 
 
 
-gg.setVisible(false)
+
+gg.sleep(500)
 gg.alert([[
-Soraia Cordeiro
+Soraia Cordeiro : Scripter & update handler
 TEAM ANM
 ]], " DIGITAR ")
+
 
 gg.sleep(8000)
 gg.setVisible(false) -- Visibility
