@@ -6,7 +6,12 @@ Soo as possible we gonna connect our server for the key system api, so get ready
 
 
 DATA = 0
-gg.sleep(1000)
+gg.alert([[
+Currently some options has been outdated due to latest update.
+We are trying our best to fix it soon as possible, until that enjoy the script with some working options!
+
+Powered by TEAM ANM
+Thnak you]], "TEAM ANM")
 
 -- Function to encrypt a string using XOR
 function xorEncryptDecrypt(str, key)
@@ -399,6 +404,15 @@ gg.setValues(GH)
 
 
 function VVIP2()
+if isUpdate then
+gg.alert([[
+We haven't updated to the latest version : 4.8.15.1
+Soon we update everything!!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+return
+end
+
 gg.clearResults()
 gg.clearList()
 -- main code on
@@ -425,6 +439,15 @@ gg.setValues(GH)
 
 
 function VVIP3()
+if isUpdate then
+gg.alert([[
+We haven't updated to the latest version : 4.8.15.1
+Soon we update everything!!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+return
+end
+
 gg.clearResults()
 gg.clearList()
 -- main code on
@@ -476,6 +499,15 @@ end
 
 
 function VVIP5()
+if isUpdate then
+gg.alert([[
+We haven't updated to the latest version : 4.8.15.1
+Soon we update everything!!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+return
+end
+
 gg.clearResults()
 gg.clearList()
 -- main code on
@@ -501,6 +533,15 @@ gg.setValues(GH)
     
 
 function VVIP6()
+if isUpdate then
+gg.alert([[
+We haven't updated to the latest version : 4.8.15.1
+Soon we update everything!!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+return
+end
+
 gg.clearResults()
 gg.clearList()
 gg.setVisible(false)
@@ -576,6 +617,15 @@ end
 
 
 function VVIP8()
+if isUpdate then
+gg.alert([[
+We haven't updated to the latest version : 4.8.15.1
+Soon we update everything!!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+return
+end
+
 gg.clearResults()
 gg.clearList()
 gg.setVisible(false)
@@ -603,6 +653,15 @@ end
 
 
 function VVIP9()
+if isUpdate then
+gg.alert([[
+We haven't updated to the latest version : 4.8.15.1
+Soon we update everything!!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+return
+end
+
 LibStart = gg.getRangesList("libil2cpp.so")[2].start
         GH = {
             {address = LibStart + 85857804, value = "h00C07944", flags = 4}
@@ -613,6 +672,15 @@ LibStart = gg.getRangesList("libil2cpp.so")[2].start
         
         
 function VVIP10()
+if isUpdate then
+gg.alert([[
+We haven't updated to the latest version : 4.8.15.1
+Soon we update everything!!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+return
+end
+
 LibStart = gg.getRangesList("libil2cpp.so")[2].start
         GH = {
             {address = LibStart + 85857804, value = "h17B7D138", flags = 4}
@@ -624,6 +692,15 @@ LibStart = gg.getRangesList("libil2cpp.so")[2].start
 
 
 function VVIP11()
+if isUpdate then
+gg.alert([[
+We haven't updated to the latest version : 4.8.15.1
+Soon we update everything!!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+return
+end
+
         LibStart = gg.getRangesList("libil2cpp.so")[2].start
         GH = {
             {address = LibStart + 85857748, value = "h0000F041", flags = 4},
@@ -636,6 +713,15 @@ function VVIP11()
         
         
 function VVIP12()
+if isUpdate then
+gg.alert([[
+We haven't updated to the latest version : 4.8.15.1
+Soon we update everything!!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+return
+end
+
 LibStart = gg.getRangesList("libil2cpp.so")[2].start
         GH = {
             {address = LibStart + 85857748, value = "h00409CC6", flags = 4},
@@ -685,6 +771,14 @@ end
 
 
 function VVIP15()
+if isPatched then
+gg.alert([[
+Send Money V2 has been patched, stay tuned soon we try to find new one!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+return
+end
+
 if gg.alert("USE THIS HACK IN ROOM NOT LOBBY ONCE THE HACK WAS ACTIVATED SEND $800 CASH TO PLAYES", "🅶🅾", "🆁🅴🆃🆄🆁🅽") ~= 1 then
 gg.setVisible(false)
 gg.clearResults()
@@ -731,6 +825,14 @@ end
 
 
 function VVIP16()
+if isPatched then
+gg.alert([[
+2B coin has been patched, stay tuned soon we try to find new one!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+return
+end
+
 if gg.alert("IT JUST A VISUAL ARE YOU SURE YOU WANNA TRY IT?!", "🅶🅾", "🆁🅴🆃🆄🆁🅽") ~= 1 then
 gg.setVisible(false)
 gg.clearResults()
