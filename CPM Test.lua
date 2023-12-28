@@ -337,7 +337,7 @@ end
 
 
 function VVIP1()
-if isPatched then
+if isUpdate then
 gg.alert([[
 We haven't updated to the latest version : 4.8.15.1
 Soon we update everything!!
