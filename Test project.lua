@@ -6,12 +6,38 @@ Soo as possible we gonna connect our server for the key system api, so get ready
 
 
 DATA = 0
-gg.alert([[
-Currently some options has been outdated due to latest update.
-We are trying our best to fix it soon as possible, until that enjoy the script with some working options!
+gg.sleep(1000)
 
-Powered by TEAM ANM
-Thank you]], "TEAM ANM")
+
+
+local isOffline = false
+
+if isOffline then
+gg.alert([[
+Currently we are working on new update, script is offline try again later.
+
+Thank you!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+gg.clearResults()
+print(os.date("🄳🄾🄽🅃 🄵🄾🅁🄶🄴🅃 🅃🄾 🅂🅄🄱🅂🄲🅁🄸🄱🄴 \n\n⏱️ Today : %Y/%m/%d Time: %H:%M:%S ⏱️\n\n"))
+print([[
+
+╭━━━━┳━━━┳━━━┳━╮╭━╮╭━━━┳━╮╱╭┳━╮╭━╮
+┃╭╮╭╮┃╭━━┫╭━╮┃┃╰╯┃┃┃╭━╮┃┃╰╮┃┃┃╰╯┃┃
+╰╯┃┃╰┫╰━━┫┃╱┃┃╭╮╭╮┃┃┃╱┃┃╭╮╰╯┃╭╮╭╮┃
+╱╱┃┃╱┃╭━━┫╰━╯┃┃┃┃┃┃┃╰━╯┃┃╰╮┃┃┃┃┃┃┃
+╱╱┃┃╱┃╰━━┫╭━╮┃┃┃┃┃┃┃╭━╮┃┃╱┃┃┃┃┃┃┃┃
+╱╱╰╯╱╰━━━┻╯╱╰┻╯╰╯╰╯╰╯╱╰┻╯╱╰━┻╯╰╯╰╯
+
+]])
+return os.exit()
+end
+
+
+
+
+
 
 -- Function to encrypt a string using XOR
 function xorEncryptDecrypt(str, key)
@@ -27,7 +53,7 @@ end
 -- Check if the alert has been shown and version matches
 local alertShownFile = "/sdcard/alertShown.txt"
 local versionFile = "/sdcard/version.txt"
-local currentVersion = "1.0"  -- Change this to your current version
+local currentVersion = "1.1"  -- Change this to your current version
 
 local alertFile = io.open(alertShownFile, "r")
 local versionFileContent = io.open(versionFile, "r")
@@ -56,6 +82,9 @@ if alertFile == nil or versionFileContent == nil or versionFileContent:read("*a"
     versionFile:write(currentVersion)
     versionFile:close()
 end
+
+
+
 
 
 
@@ -144,7 +173,13 @@ local isPatched = true
 
 
 -- Update function
-local isUpdate = true
+local isUpdate = false
+
+-- problem/error
+local isProb = true
+
+-- Additional option
+local isAd = true
 
 
 
@@ -164,7 +199,7 @@ gg.alert("╭━━━━┳━━━┳━━━┳━╮╭━╮╭━━━�
 
 -- Script version Free ;)
 -- Game : car parking multiplayer
--- Version : 4.8.14.8
+-- Version : 4.8.15.1
 -- Source will be provided soon in GitHub
 -- Team ANM
 
@@ -404,15 +439,6 @@ gg.setValues(GH)
 
 
 function VVIP2()
-if isUpdate then
-gg.alert([[
-We haven't updated to the latest version : 4.8.15.1
-Soon we update everything!!
-
-TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
-return
-end
-
 gg.clearResults()
 gg.clearList()
 -- main code on
@@ -422,10 +448,10 @@ GH=nil
 GH={}
 GH[1]={}
 GH[2]={}
-GH[1].address=LibStart+0x207AF10
+GH[1].address=LibStart+0x3A7F754
 GH[1].value='h200080D2'
 GH[1].flags=4
-GH[2].address=LibStart+(0x207AF10+0x4)
+GH[2].address=LibStart+(0x3A7F754+0x4)
 GH[2].value='hC0035FD6'
 GH[2].flags=4
 gg.setValues(GH)
@@ -439,20 +465,10 @@ gg.setValues(GH)
 
 
 function VVIP3()
-if isUpdate then
-gg.alert([[
-We haven't updated to the latest version : 4.8.15.1
-Soon we update everything!!
-
-TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
-return
-end
-
 gg.clearResults()
 gg.clearList()
 -- main code on
-gg.setRanges(gg.REGION_CODE_APP)
-     LibStart=gg.getRangesList('libil2cpp.so')[2].start
+LibStart=gg.getRangesList('libil2cpp.so')[2].start
 GH=nil
 GH={}
 GH[1]={}
@@ -499,15 +515,6 @@ end
 
 
 function VVIP5()
-if isUpdate then
-gg.alert([[
-We haven't updated to the latest version : 4.8.15.1
-Soon we update everything!!
-
-TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
-return
-end
-
 gg.clearResults()
 gg.clearList()
 -- main code on
@@ -517,10 +524,10 @@ GH=nil
 GH={}
 GH[1]={}
 GH[2]={}
-GH[1].address=LibStart+0x1AD9C7C
+GH[1].address=LibStart+0x3CE249C
 GH[1].value='h200080D2'
 GH[1].flags=4
-GH[2].address=LibStart+(0x1AD9C7C+0x4)
+GH[2].address=LibStart+(0x3CE249C+0x4)
 GH[2].value='hC0035FD6'
 GH[2].flags=4
 gg.setValues(GH)
@@ -533,15 +540,6 @@ gg.setValues(GH)
     
 
 function VVIP6()
-if isUpdate then
-gg.alert([[
-We haven't updated to the latest version : 4.8.15.1
-Soon we update everything!!
-
-TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
-return
-end
-
 gg.clearResults()
 gg.clearList()
 gg.setVisible(false)
@@ -558,10 +556,10 @@ GH=nil
 GH={}
 GH[1]={}
 GH[2]={}
-GH[1].address=LibStart+0x32086E4
+GH[1].address=LibStart+0x45B66AC
 GH[1].value='h200080D2'
 GH[1].flags=4
-GH[2].address=LibStart+(0x32086E4+0x4)
+GH[2].address=LibStart+(0x45B66AC+0x4)
 GH[2].value='hC0035FD6'
 GH[2].flags=4
 gg.setValues(GH)
@@ -617,15 +615,6 @@ end
 
 
 function VVIP8()
-if isUpdate then
-gg.alert([[
-We haven't updated to the latest version : 4.8.15.1
-Soon we update everything!!
-
-TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
-return
-end
-
 gg.clearResults()
 gg.clearList()
 gg.setVisible(false)
@@ -640,10 +629,10 @@ GH=nil
 GH={}
 GH[1]={}
 GH[2]={}
-GH[1].address=LibStart+0x20DD368
+GH[1].address=LibStart+0x3601040
 GH[1].value='h200080D2'
 GH[1].flags=4
-GH[2].address=LibStart+(0x20DD368+0x4)
+GH[2].address=LibStart+(0x3601040+0x4)
 GH[2].value='hC0035FD6'
 GH[2].flags=4
 gg.setValues(GH)
@@ -653,7 +642,7 @@ end
 
 
 function VVIP9()
-if isUpdate then
+if isAd then
 gg.alert([[
 We haven't updated to the latest version : 4.8.15.1
 Soon we update everything!!
@@ -661,7 +650,6 @@ Soon we update everything!!
 TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
 return
 end
-
 LibStart = gg.getRangesList("libil2cpp.so")[2].start
         GH = {
             {address = LibStart + 85857804, value = "h00C07944", flags = 4}
@@ -672,7 +660,7 @@ LibStart = gg.getRangesList("libil2cpp.so")[2].start
         
         
 function VVIP10()
-if isUpdate then
+if isAd then
 gg.alert([[
 We haven't updated to the latest version : 4.8.15.1
 Soon we update everything!!
@@ -680,7 +668,6 @@ Soon we update everything!!
 TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
 return
 end
-
 LibStart = gg.getRangesList("libil2cpp.so")[2].start
         GH = {
             {address = LibStart + 85857804, value = "h17B7D138", flags = 4}
@@ -692,7 +679,7 @@ LibStart = gg.getRangesList("libil2cpp.so")[2].start
 
 
 function VVIP11()
-if isUpdate then
+if isAd then
 gg.alert([[
 We haven't updated to the latest version : 4.8.15.1
 Soon we update everything!!
@@ -700,7 +687,6 @@ Soon we update everything!!
 TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
 return
 end
-
         LibStart = gg.getRangesList("libil2cpp.so")[2].start
         GH = {
             {address = LibStart + 85857748, value = "h0000F041", flags = 4},
@@ -713,7 +699,7 @@ end
         
         
 function VVIP12()
-if isUpdate then
+if isAd then
 gg.alert([[
 We haven't updated to the latest version : 4.8.15.1
 Soon we update everything!!
@@ -721,7 +707,6 @@ Soon we update everything!!
 TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
 return
 end
-
 LibStart = gg.getRangesList("libil2cpp.so")[2].start
         GH = {
             {address = LibStart + 85857748, value = "h00409CC6", flags = 4},
@@ -771,14 +756,14 @@ end
 
 
 function VVIP15()
-if isPatched then
+if isProb then
 gg.alert([[
-Send Money V2 has been patched, stay tuned soon we try to find new one!
+Currently this option got some errors soon as possible we fix it
 
-TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+TEAM ANM
+]], "🆁🅴🆃🆄🆁🅽")
 return
 end
-
 if gg.alert("USE THIS HACK IN ROOM NOT LOBBY ONCE THE HACK WAS ACTIVATED SEND $800 CASH TO PLAYES", "🅶🅾", "🆁🅴🆃🆄🆁🅽") ~= 1 then
 gg.setVisible(false)
 gg.clearResults()
@@ -820,8 +805,6 @@ gg.toast("🔰DONE🔰")
 gg.clearResults()
 end
 end
-
-
 
 
 function VVIP16()
@@ -952,6 +935,7 @@ gg.alert([[
 [+] Instant 50M
 [+] Custom Hp
 [~] Fixed Errors
+[+] Updated all the outdated options
 
 More options will be added soon!
 
