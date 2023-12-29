@@ -8,7 +8,7 @@ Team ANM
 
 DATA = 0
 
-local isOffline = true
+local isOffline = false
 
 if isOffline then
 gg.alert([[
