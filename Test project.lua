@@ -127,6 +127,7 @@ end
 
 gg.sleep(500)
 gg.alert([[
+GG HACKER : Patchwork,Bug fix & Error handler
 Soraia Cordeiro : Scripter & update handler
 TEAM ANM
 ]], " DIGITAR ")
