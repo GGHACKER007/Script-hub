@@ -962,11 +962,13 @@ Yasuaki Tsuji : JAVASCRIPTER, SITE MANAGER
 Víctor Magalhães : PAYMENT METHODS MANAGER
 Claúdia da Silva : MODERATOR
 
-TEAM ANM : We create Roblox scripts & sell it all our Script for paid users & script is not free!!
-All the script were private it cant be shared with public users!
-Currently scripthub & website has been shutdown due to BYFRON anticheat
+TEAM ANM : We create Roblox scripts
+Currently scripthub & website has been shutdown due to BYFRON anticheat!
+Free version of our script is available in scriptblox.com
 
-Thanks to all other staffs
+My proflie : https://scriptblox.com/u/GG_HACKER
+
+Thanks to all other staffs.
 ]], "🆁🅴🆃🆄🆁🅽")
 end
 
