@@ -9,6 +9,37 @@ DATA = 0
 gg.sleep(1000)
 
 
+gg.setVisible(false)
+-- Function to check and display greetings for New Year, Christmas, and Valentine
+local function checkAndDisplayWishes()
+    local currentTime = os.time()
+    local currentYear = tonumber(os.date("%Y", currentTime))
+
+    local newYearDate = os.time{year = currentYear, month = 1, day = 1}
+    local christmasDate = os.time{year = currentYear, month = 12, day = 25}
+    local valentineDate = os.time{year = currentYear, month = 2, day = 14}
+
+    local teamName = "TEAM ANN"
+
+    if currentTime >= newYearDate and currentTime < newYearDate + 24 * 60 * 60 then
+        local formattedDate = os.date("%d %B %Y %X %p", currentTime)
+        gg.alert("┏━━━━━━━━༻❁༺━━━━━━━━┓\n    ❀ SCRIPT BY TEAM ANN ❀\n " .. formattedDate .. "\n┗━━━━━━━━༻❁༺━━━━━━━━┛\n\n🎉 Happy New Year! 🎉\n\n", teamName)
+    elseif currentTime >= christmasDate and currentTime < christmasDate + 24 * 60 * 60 then
+        gg.alert("┏━━━━━━━━༻❁༺━━━━━━━━┓\n    ❀ SCRIPT BY TEAM ANN ❀\n" .. formattedDate .. "\n┗━━━━━━━━༻❁༺━━━━━━━━┛\n\n🎄 Merry Christmas!\n\n", teamName)
+    elseif currentTime >= valentineDate and currentTime < valentineDate + 24 * 60 * 60 then
+        gg.alert("┏━━━━━━━━༻❁༺━━━━━━━━┓\n\n    ❀ SCRIPT BY TEAM ANN ❀\n" .. formattedDate .. "\n┗━━━━━━━━༻❁༺━━━━━━━━┛\n\n❤️ Happy Valentine's Day! ❤️\n\n", teamName)
+    else
+        
+    end
+end
+
+-- Call the function to check and display wishes
+checkAndDisplayWishes()
+
+
+
+gg.setVisible(false)
+
 
 local isOffline = false
 
