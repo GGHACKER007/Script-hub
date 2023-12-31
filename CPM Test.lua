@@ -53,7 +53,7 @@ end
 -- Check if the alert has been shown and version matches
 local alertShownFile = "/sdcard/alertShown.txt"
 local versionFile = "/sdcard/version.txt"
-local currentVersion = "1.1"  -- Change this to your current version
+local currentVersion = "1.2"  -- Change this to your current version
 
 local alertFile = io.open(alertShownFile, "r")
 local versionFileContent = io.open(versionFile, "r")
@@ -61,7 +61,7 @@ local versionFileContent = io.open(versionFile, "r")
 if alertFile == nil or versionFileContent == nil or versionFileContent:read("*a") ~= currentVersion then
     -- Alert has not been shown or version has been updated, show the alert
     gg.setVisible(false)
-    gg.alert("Script got updated\nVersion : "..currentVersion, "TEAM ANM")
+    gg.alert("Script got updated\nPatch update\nVersion : "..currentVersion, "TEAM ANM")
     
 
     -- Encrypt and write the new file content
@@ -418,10 +418,10 @@ GH=nil
 GH={}
 GH[1]={}
 GH[2]={}
-GH[1].address=LibStart+0x1B4917C
+GH[1].address=LibStart+0x358D228
 GH[1].value='h200080D2'
 GH[1].flags=4
-GH[2].address=LibStart+(0x1B4917C+0x4)
+GH[2].address=LibStart+(0x358D228+0x4)
 GH[2].value='hC0035FD6'
 GH[2].flags=4
 gg.setValues(GH)
