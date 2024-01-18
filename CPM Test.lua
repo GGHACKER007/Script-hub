@@ -15,12 +15,15 @@ local isOffline = true
 
 if isOffline then
 gg.alert([[
-Currently we our free version of scrip is offline due to collabration with other TEAM & projects
+Currently we our free version of script is offline due to collaboration with other TEAM & PROJECTS
 
 Thank you for understanding!
 
 TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
 gg.clearResults()
+gg.toast("LOGGING OFF")
+gg.sleep(500)
+gg.setVisible(true)
 print(os.date("🄳🄾🄽🅃 🄵🄾🅁🄶🄴🅃 🅃🄾 🅂🅄🄱🅂🄲🅁🄸🄱🄴 \n\n⏱️ Today : %Y/%m/%d Time: %H:%M:%S ⏱️\n\n"))
 print([[
 
