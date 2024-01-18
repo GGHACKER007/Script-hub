@@ -14,7 +14,6 @@ gg.setVisible(false)
 local isOffline = true
 
 if isOffline then
-gg.setVisible(true)
 gg.alert([[
 Currently we our free version of script is offline due to collaboration with other TEAM & PROJECTS
 
