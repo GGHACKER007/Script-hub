@@ -8,6 +8,36 @@ Soo as possible we gonna connect our server for the key system api, so get ready
 DATA = 0
 gg.sleep(1000)
 
+gg.setVisible(false)
+
+
+local isOffline = true
+
+if isOffline then
+gg.alert([[
+Currently we our free version of scrip is offline due to collabration with other TEAM & projects
+
+Thank you for understanding!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+gg.clearResults()
+print(os.date("🄳🄾🄽🅃 🄵🄾🅁🄶🄴🅃 🅃🄾 🅂🅄🄱🅂🄲🅁🄸🄱🄴 \n\n⏱️ Today : %Y/%m/%d Time: %H:%M:%S ⏱️\n\n"))
+print([[
+
+╭━━━━┳━━━┳━━━┳━╮╭━╮╭━━━┳━╮╱╭┳━╮╭━╮
+┃╭╮╭╮┃╭━━┫╭━╮┃┃╰╯┃┃┃╭━╮┃┃╰╮┃┃┃╰╯┃┃
+╰╯┃┃╰┫╰━━┫┃╱┃┃╭╮╭╮┃┃┃╱┃┃╭╮╰╯┃╭╮╭╮┃
+╱╱┃┃╱┃╭━━┫╰━╯┃┃┃┃┃┃┃╰━╯┃┃╰╮┃┃┃┃┃┃┃
+╱╱┃┃╱┃╰━━┫╭━╮┃┃┃┃┃┃┃╭━╮┃┃╱┃┃┃┃┃┃┃┃
+╱╱╰╯╱╰━━━┻╯╱╰┻╯╰╯╰╯╰╯╱╰┻╯╱╰━┻╯╰╯╰╯
+
+]])
+return os.exit()
+end
+
+
+
+
 
 gg.setVisible(false)
 -- Function to check and display greetings for New Year, Christmas, and Valentine
@@ -38,32 +68,6 @@ checkAndDisplayWishes()
 
 
 
-gg.setVisible(false)
-
-
-local isOffline = false
-
-if isOffline then
-gg.alert([[
-Currently we are working on new update, script is offline try again later.
-
-Thank you!
-
-TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
-gg.clearResults()
-print(os.date("🄳🄾🄽🅃 🄵🄾🅁🄶🄴🅃 🅃🄾 🅂🅄🄱🅂🄲🅁🄸🄱🄴 \n\n⏱️ Today : %Y/%m/%d Time: %H:%M:%S ⏱️\n\n"))
-print([[
-
-╭━━━━┳━━━┳━━━┳━╮╭━╮╭━━━┳━╮╱╭┳━╮╭━╮
-┃╭╮╭╮┃╭━━┫╭━╮┃┃╰╯┃┃┃╭━╮┃┃╰╮┃┃┃╰╯┃┃
-╰╯┃┃╰┫╰━━┫┃╱┃┃╭╮╭╮┃┃┃╱┃┃╭╮╰╯┃╭╮╭╮┃
-╱╱┃┃╱┃╭━━┫╰━╯┃┃┃┃┃┃┃╰━╯┃┃╰╮┃┃┃┃┃┃┃
-╱╱┃┃╱┃╰━━┫╭━╮┃┃┃┃┃┃┃╭━╮┃┃╱┃┃┃┃┃┃┃┃
-╱╱╰╯╱╰━━━┻╯╱╰┻╯╰╯╰╯╰╯╱╰┻╯╱╰━┻╯╰╯╰╯
-
-]])
-return os.exit()
-end
 
 
 
@@ -168,7 +172,7 @@ gg.sleep(500)
 gg.alert([[
 Contact details!
 Instagram : gg_hacker_cpm << Active >>
-Discord : gghacker << Currently inactive >>
+Discord : gghacker << Active >>
 TikTok : gg_hacker007 << Active >>
 
 Here you can send bug report or need any help always here to respond!
