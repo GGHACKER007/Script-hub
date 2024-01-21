@@ -9,6 +9,42 @@ DATA = 0
 gg.sleep(1000)
 
 
+
+gg.setVisible(false)
+
+
+local isOffline = true
+
+if isOffline then
+gg.alert([[
+Currently we have stopped updating script due to lot of project works, also game got updated we don't have time to update.
+Soon we will be back with more hacks & Achievements script is out premium users can use it right now, Free users be patient soon we release free version!
+
+
+Thank you!
+
+TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
+gg.clearResults()
+print(os.date("🄳🄾🄽🅃 🄵🄾🅁🄶🄴🅃 🅃🄾 🅂🅄🄱🅂🄲🅁🄸🄱🄴 \n\n⏱️ Today : %Y/%m/%d Time: %H:%M:%S ⏱️\n\n"))
+print([[
+
+╭━━━━┳━━━┳━━━┳━╮╭━╮╭━━━┳━╮╱╭┳━╮╭━╮
+┃╭╮╭╮┃╭━━┫╭━╮┃┃╰╯┃┃┃╭━╮┃┃╰╮┃┃┃╰╯┃┃
+╰╯┃┃╰┫╰━━┫┃╱┃┃╭╮╭╮┃┃┃╱┃┃╭╮╰╯┃╭╮╭╮┃
+╱╱┃┃╱┃╭━━┫╰━╯┃┃┃┃┃┃┃╰━╯┃┃╰╮┃┃┃┃┃┃┃
+╱╱┃┃╱┃╰━━┫╭━╮┃┃┃┃┃┃┃╭━╮┃┃╱┃┃┃┃┃┃┃┃
+╱╱╰╯╱╰━━━┻╯╱╰┻╯╰╯╰╯╰╯╱╰┻╯╱╰━┻╯╰╯╰╯
+
+]])
+return os.exit()
+end
+
+
+
+
+
+
+
 gg.setVisible(false)
 -- Function to check and display greetings for New Year, Christmas, and Valentine
 local function checkAndDisplayWishes()
@@ -37,32 +73,6 @@ end
 checkAndDisplayWishes()
 
 
-gg.setVisible(false)
-
-
-local isOffline = false
-
-if isOffline then
-gg.alert([[
-Currently we are working on new update, script is offline try again later.
-
-Thank you!
-
-TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
-gg.clearResults()
-print(os.date("🄳🄾🄽🅃 🄵🄾🅁🄶🄴🅃 🅃🄾 🅂🅄🄱🅂🄲🅁🄸🄱🄴 \n\n⏱️ Today : %Y/%m/%d Time: %H:%M:%S ⏱️\n\n"))
-print([[
-
-╭━━━━┳━━━┳━━━┳━╮╭━╮╭━━━┳━╮╱╭┳━╮╭━╮
-┃╭╮╭╮┃╭━━┫╭━╮┃┃╰╯┃┃┃╭━╮┃┃╰╮┃┃┃╰╯┃┃
-╰╯┃┃╰┫╰━━┫┃╱┃┃╭╮╭╮┃┃┃╱┃┃╭╮╰╯┃╭╮╭╮┃
-╱╱┃┃╱┃╭━━┫╰━╯┃┃┃┃┃┃┃╰━╯┃┃╰╮┃┃┃┃┃┃┃
-╱╱┃┃╱┃╰━━┫╭━╮┃┃┃┃┃┃┃╭━╮┃┃╱┃┃┃┃┃┃┃┃
-╱╱╰╯╱╰━━━┻╯╱╰┻╯╰╯╰╯╰╯╱╰┻╯╱╰━┻╯╰╯╰╯
-
-]])
-return os.exit()
-end
 
 
 
