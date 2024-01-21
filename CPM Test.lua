@@ -6,7 +6,6 @@ Soo as possible we gonna connect our server for the key system api, so get ready
 
 
 DATA = 0
-gg.sleep(1000)
 
 gg.setVisible(false)
 
@@ -15,9 +14,11 @@ local isOffline = true
 
 if isOffline then
 gg.alert([[
-Currently we our free version of script is offline due to collaboration with other TEAM & PROJECTS
+Currently we have stopped updating script due to lot of project works, also game got updated we don't have time to update.
+Soon we will be back with more hacks & Achievements script is out premium users can use it right now, Free users be patient soon we release free version!
 
-Thank you for understanding!
+
+Thank you!
 
 TEAM ANM]], "🆁🅴🆃🆄🆁🅽")
 gg.clearResults()
