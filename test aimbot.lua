@@ -1,83 +1,78 @@
---UNIVERSAL AIMBOT V2 BY GG HACKER (Aka : NERUPU_YT)
-local config = {
-    TeamCheck = true,   -- Set to true to only target players on different teams
-    Smoothing = 1,       -- Camera smoothing factor
-    KeyToToggle = Enum.KeyCode.F, -- Key to toggle the aimbot
-}
+local GUI = Instance.new("ScreenGui")
+local Toggle = Instance.new("TextButton")
+local Status = Instance.new("TextLabel")
 
--- Services
-local RunService = game:GetService("RunService")
-local UserInputService = game:GetService("UserInputService")
+GUI.Name = "AimbotGUI"
+GUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
--- GUI
-local TextLabel = Instance.new("TextLabel")
-TextLabel.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-TextLabel.Size = UDim2.new(0, 100, 0, 50)
-TextLabel.Position = UDim2.new(0.5, -50, 0.5, -25)
-TextLabel.BackgroundTransparency = 1
-TextLabel.Text = "Aimbot: OFF"
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.TextSize = 20
-TextLabel.TextColor3 = Color3.new(1, 1, 1)
+Toggle.Name = "ToggleButton"
+Toggle.Parent = GUI
+Toggle.Size = UDim2.new(0.1, 0, 0.05, 0)
+Toggle.Position = UDim2.new(0.95, 0, 0.95, 0)
+Toggle.Text = "Toggle Aimbot"
+Toggle.Font = Enum.Font.SourceSans
+Toggle.TextColor3 = Color3.new(1, 1, 1)
+Toggle.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+Toggle.BorderColor3 = Color3.new(0.1, 0.1, 0.1)
+Toggle.BorderSizePixel = 1
 
--- Function to get the closest visible player
-local function getClosestVisiblePlayer(camera)
-    local ray = Ray.new(camera.CFrame.Position, camera.CFrame.LookVector)
-    local closestPlayer = nil
-    local closestDistance = math.huge
-    
-    for _, player in pairs(game.Players:GetPlayers()) do
-        if player ~= game.Players.LocalPlayer then
-            local character = player.Character
-            if character and character:FindFirstChild("Head") then
-                local headPosition = character.Head.Position
-                local targetPosition = ray:ClosestPoint(headPosition)
-                local distance = (targetPosition - headPosition).Magnitude
-                
-                if distance < closestDistance then
-                    closestDistance = distance
-                    closestPlayer = player
+Status.Name = "StatusLabel"
+Status.Parent = GUI
+Status.Size = UDim2.new(0.1, 0, 0.05, 0)
+Status.Position = UDim2.new(0.05, 0, 0.05, 0)
+Status.Text = "Aimbot: Off"
+Status.Font = Enum.Font.SourceSans
+Status.TextColor3 = Color3.new(1, 1, 1)
+Status.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+Status.BorderColor3 = Color3.new(0.1, 0.1, 0.1)
+Status.BorderSizePixel = 1
+
+local function toggleAimbot()
+    if aimbotEnabled then
+        aimbotEnabled = false
+        Toggle.Text = "Toggle Aimbot"
+        Status.Text = "Aimbot: Off"
+        print("Aimbot is now off.")
+    else
+        aimbotEnabled = true
+        Toggle.Text = "Toggle Aimbot (On)"
+        Status.Text = "Aimbot: On"
+        print("Aimbot is now on.")
+    end
+end
+
+Toggle.MouseButton1Click:Connect(toggleAimbot)
+
+local aimbotEnabled = false
+
+while true do
+    if aimbotEnabled then
+        -- Get the closest player
+        local closestPlayer = nil
+        local shortestDistance = math.huge
+        for _, player in ipairs(game.Players:GetPlayers()) do
+            if player ~= game.Players.LocalPlayer then
+                local character = player.Character
+                if character then
+                    local head = character:WaitForChild("Head")
+                    local distance = (game.Players.LocalPlayer.Character.Head.Position - head.Position).Magnitude
+                    if distance < shortestDistance then
+                        shortestDistance = distance
+                        closestPlayer = player
+                    end
                 end
             end
         end
-    end
-    
-    return closestPlayer
-end
 
--- Function to toggle the aimbot
-local aimbotEnabled = false
-
-local function toggleAimbot()
-    aimbotEnabled = not aimbotEnabled
-    TextLabel.Text = aimbotEnabled and "Aimbot: ON" or "Aimbot: OFF"
-end
-
--- Function to update the aimbot
-local function updateAimbot()
-    if aimbotEnabled then
-        local currentCamera = workspace.CurrentCamera
-        local crosshairPosition = currentCamera.ViewportSize / 2
-        local closestPlayer = getClosestVisiblePlayer(currentCamera)
-        
+        -- Aim at the head of the closest player
         if closestPlayer then
-            local headPosition = closestPlayer.Character.Head.Position
-            local headScreenPosition = currentCamera:WorldToScreenPoint(headPosition)
-            local distanceToCrosshair = (Vector2.new(headScreenPosition.X, headScreenPosition.Y) - crosshairPosition).Magnitude
-            
-            if distanceToCrosshair < 100 then -- adjust the value to change the size of the "FOV"
-                currentCamera.CFrame = currentCamera.CFrame:Lerp(CFrame.new(currentCamera.CFrame.Position, headPosition), config.Smoothing)
-            end
+            local head = closestPlayer.Character:WaitForChild("Head")
+            local aimPos = head.Position
+            local camera = workspace.CurrentCamera
+            local lookVector = (aimPos - camera.CFrame.p).Unit
+            camera.CFrame = camera.CFrame + lookVector * 5
         end
     end
+
+    wait()
 end
-
--- Connect the toggleAimbot function to the toggle key
-UserInputService.InputBegan:Connect(function(input)
-    if input.KeyCode == config.KeyToToggle then
-        toggleAimbot()
-    end
-end)
-
--- Connect the updateAimbot function to the RenderStepped event
-RunService.RenderStepped:Connect(updateAimbot)
