@@ -1,46 +1,58 @@
--- Get the player to fling (optional)
+-- Set the distance threshold for flinging
+local DISTANCE_THRESHOLD = 200
+
+-- Get the player to fling from
 local player = game.Players.LocalPlayer
 
--- Get the target to fling
-local target = player.Character or game.Workspace:FindFirstChild("TargetModel")
+-- Get the player's character
+local character = player.Character
 
--- Check if the target exists
-if target then
-    -- Calculate the force to apply
-    local force = Vector3.new(1000, 500, 1000)
+-- Check if the player's character exists
+if character then
+    -- Get the player's humanoid root part
+    local hrp = character:WaitForChild("HumanoidRootPart")
 
-    -- Check if the target is a player
-    if target:IsA("Model") and target.PrimaryPart then
-        -- Get the player's character
-        local character = target
+    -- Get all parts within the distance threshold
+    local parts = workspace:FindPartsInRegion3(hrp.CFrame.Extents, hrp.CFrame, DISTANCE_THRESHOLD)
 
-        -- Check if the character is valid
-        if character and character:FindFirstChild("HumanoidRootPart") then
-            -- Get the character's humanoid root part
-            local hrp = character.HumanoidRootPart
+    -- Iterate through the parts
+    for _, part in ipairs(parts) do
+        -- Check if the part is a player or a base part
+        if part:IsA("Model") and part:FindFirstChild("HumanoidRootPart") then
+            -- Get the player's character
+            local targetCharacter = part
 
-            -- Check if the player's humanoid is moving
-            local function checkHumanoid()
-                if character.Humanoid.Health > 0 and not character.Humanoid.Sit then
-                    if character.Humanoid.MoveDirection.Magnitude > 0 then
-                        wait(0.1)
-                        checkHumanoid()
-                    else
-                        -- Apply the force to the character's humanoid root part
-                        hrp:ApplyForce(force)
+            -- Check if the character is valid
+            if targetCharacter and targetCharacter:FindFirstChild("HumanoidRootPart") then
+                -- Get the character's humanoid root part
+                local targetHrp = targetCharacter.HumanoidRootPart
+
+                -- Check if the player's humanoid is moving
+                local function checkHumanoid()
+                    if targetCharacter.Humanoid.Health > 0 and not targetCharacter.Humanoid.Sit then
+                        if targetCharacter.Humanoid.MoveDirection.Magnitude > 0 then
+                            wait(0.1)
+                            checkHumanoid()
+                        else
+                            -- Calculate the force to apply
+                            local force = (hrp.Position - targetHrp.Position) * 1000
+
+                            -- Apply the force to the character's humanoid root part
+                            targetHrp:ApplyForce(force)
+                        end
                     end
                 end
-            end
 
-            -- Start checking the player's humanoid
-            checkHumanoid()
-        end
-    else
-        -- Check if the target is a part
-        if target:IsA("BasePart") then
+                -- Start checking the player's humanoid
+                checkHumanoid()
+            end
+        elseif part:IsA("BasePart") then
+            -- Calculate the force to apply
+            local force = (hrp.Position - part.Position) * 1000
+
             -- Apply the force to the part
-            target.AssemblyLinearVelocity = Vector3.new()
-            target:ApplyForce(force)
+            part.AssemblyLinearVelocity = Vector3.new()
+            part:ApplyForce(force)
         end
     end
 end
