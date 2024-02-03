@@ -1,7 +1,6 @@
 --UNIVERSAL AIMBOT V2 BY GG HACKER (Aka : NERUPU_YT)
 local config = {
     TeamCheck = true,   -- Set to true to only target players on different teams
-    FOV = 150,           -- Field of View
     Smoothing = 1,       -- Camera smoothing factor
     KeyToToggle = Enum.KeyCode.F, -- Key to toggle the aimbot
 }
@@ -11,14 +10,6 @@ local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
 
 -- GUI
-local FOVring = Drawing.new("Circle")
-FOVring.Visible = true
-FOVring.Thickness = 1.5
-FOVring.Radius = config.FOV
-FOVring.Transparency = 1
-FOVring.Color = Color3.fromRGB(255, 128, 128)
-FOVring.Position = workspace.CurrentCamera.ViewportSize / 2
-
 local TextLabel = Instance.new("TextLabel")
 TextLabel.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 TextLabel.Size = UDim2.new(0, 100, 0, 50)
@@ -59,7 +50,6 @@ local aimbotEnabled = false
 
 local function toggleAimbot()
     aimbotEnabled = not aimbotEnabled
-    FOVring.Visible = aimbotEnabled
     TextLabel.Text = aimbotEnabled and "Aimbot: ON" or "Aimbot: OFF"
 end
 
@@ -75,7 +65,7 @@ local function updateAimbot()
             local headScreenPosition = currentCamera:WorldToScreenPoint(headPosition)
             local distanceToCrosshair = (Vector2.new(headScreenPosition.X, headScreenPosition.Y) - crosshairPosition).Magnitude
             
-            if distanceToCrosshair < config.FOV then
+            if distanceToCrosshair < 100 then -- adjust the value to change the size of the "FOV"
                 currentCamera.CFrame = currentCamera.CFrame:Lerp(CFrame.new(currentCamera.CFrame.Position, headPosition), config.Smoothing)
             end
         end
@@ -89,4 +79,5 @@ UserInputService.InputBegan:Connect(function(input)
     end
 end)
 
--- Connect the updateAimbot function to the RenderStepped
+-- Connect the updateAimbot function to the RenderStepped event
+RunService.RenderStepped:Connect(updateAimbot)
