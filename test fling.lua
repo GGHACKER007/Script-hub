@@ -1,5 +1,5 @@
 -- Set the distance threshold for flinging
-local DISTANCE_THRESHOLD = 2000
+local DISTANCE_THRESHOLD = 200
 
 -- Get the player to fling from
 local player = game.Players.LocalPlayer
@@ -12,11 +12,15 @@ if character then
     -- Get the player's humanoid root part
     local hrp = character:WaitForChild("HumanoidRootPart")
 
-    -- Create a Region3 object using the CFrame's position and extents
-    local region = Region3.new(hrp.CFrame.Position - hrp.CFrame.Extents, hrp.CFrame.Position + hrp.CFrame.Extents)
+    -- Calculate the position and extents of the Region3 object
+    local position = hrp.Position
+    local extents = Vector3.new(DISTANCE_THRESHOLD, DISTANCE_THRESHOLD, DISTANCE_THRESHOLD)
+
+    -- Create a Region3 object
+    local region = Region3.new(position - extents, position + extents)
 
     -- Get all parts within the distance threshold
-    local parts = workspace:FindPartsInRegion3(region, DISTANCE_THRESHOLD)
+    local parts = workspace:FindPartsInRegion3(region, hrp)
 
     -- Iterate through the parts
     for _, part in ipairs(parts) do
